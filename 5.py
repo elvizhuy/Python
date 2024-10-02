@@ -17,3 +17,4 @@ def process_text_group():
 
 
 process_text_group()
+
