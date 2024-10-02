@@ -7,18 +7,16 @@ def product_of_digits(n):
             product *= int(digit)
             has_non_zero_digit = True
 
-    if has_non_zero_digit:
-        return product
-    else:
+    if not has_non_zero_digit:
         return 0
+    return product
 
 
 def process_tests():
     t = int(input())
     for _ in range(t):
-        n = input().strip()  # Đọc số N dưới dạng chuỗi
+        n = input().strip()
         print(product_of_digits(n))
 
 
-# Test case
 process_tests()
