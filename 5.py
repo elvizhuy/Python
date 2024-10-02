@@ -1,19 +1,19 @@
 def process_text_group():
     n = int(input())
-    group_1 = set()
+    group_1_words = set()
     for _ in range(n):
-        group_1.update(input().split())
+        group_1_words.update(input().split())
 
     m = int(input())
-    group_2 = set()
+    group_2_words = set()
     for _ in range(m):
-        group_2.update(input().split())
+        group_2_words.update(input().split())
 
-    diff_1_2 = sorted(group_1 - group_2)
-    diff_2_1 = sorted(group_2 - group_1)
+    only_in_group_1 = sorted(group_1_words - group_2_words)
+    only_in_group_2 = sorted(group_2_words - group_1_words)
 
-    print(' '.join(diff_1_2))
-    print(' '.join(diff_2_1))
+    print(' '.join(only_in_group_1))
+    print(' '.join(only_in_group_2))
 
 
 process_text_group()

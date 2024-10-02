@@ -1,13 +1,13 @@
 def product_of_digits(n):
     product = 1
-    has_non_zero_digit = False
+    found_non_zero = False
 
     for digit in n:
         if digit != '0':
             product *= int(digit)
-            has_non_zero_digit = True
+            found_non_zero = True
 
-    if not has_non_zero_digit:
+    if not found_non_zero:
         return 0
     return product
 
