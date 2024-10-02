@@ -1,18 +1,19 @@
 def is_increasing_decreasing(s):
     n = len(s)
-
-    # Phải có đúng 8 ký tự
     if n != 8:
         return "NO"
 
-    found_decreasing_point = False
-    for i in range(1, n):
-        if s[i] < s[i - 1]:
-            found_decreasing_point = True
-        elif found_decreasing_point and s[i] <= s[i - 1]:
-            return "NO"
+    i = 1
 
-    if found_decreasing_point:
+    while i < n and s[i] < s[i - 1]:
+        i += 1
+
+
+    while i < n and s[i] > s[i - 1]:
+        i += 1
+
+
+    if i == n:
         return "YES"
     else:
         return "NO"
@@ -25,5 +26,6 @@ def process_tests():
         print(is_increasing_decreasing(s))
 
 
-# Test case
+
 process_tests()
+
