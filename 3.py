@@ -19,3 +19,4 @@ for _ in range(t):
     print(product_of_digits(n))
 
 
+
