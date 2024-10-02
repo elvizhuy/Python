@@ -1,16 +1,10 @@
-# This is a sample Python script.
+def check_lucky_number(n):
+    count_3 = str(n).count('3')
+    count_5 = str(n).count('5')
+    if count_3 + count_5 == 3 or count_3 + count_5 == 5:
+        return "YES"
+    return "NO"
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+# Test case
+n = int(input())
+print(check_lucky_number(n))
