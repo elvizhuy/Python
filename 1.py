@@ -11,15 +11,16 @@ flights_data = '''
 '''
 data = json.loads(flights_data)
 
+flight_dict = {}
+for flight in data['flights']:
+    flight_dict[(flight['year'], flight['month'].lower())] = flight['passengers']
+
 test_cases = int(input())
 
 for _ in range(test_cases):
     year, month = input().split()
-    found = False
-    for flight in data['flights']:
-        if flight['year'] == year and flight['month'].lower() == month.lower():
-            print(flight['passengers'])
-            found = True
-            break
-    if not found:
+    key = (year, month.lower())
+    if key in flight_dict:
+        print(flight_dict[key])
+    else:
         print("Invalid")
