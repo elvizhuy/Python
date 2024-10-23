@@ -1,6 +1,6 @@
 import json
 
-# Load JSON data
+# Sample data (this should be read from a JSON file in a real scenario)
 flights_data = '''
 {
     "flights": [
@@ -12,14 +12,14 @@ flights_data = '''
 '''
 data = json.loads(flights_data)
 
-# Input reading and processing
+# Input handling
 test_cases = int(input())  # Number of test cases
 
 for _ in range(test_cases):
-    year, month = input().split()
+    year, month = input().split()  # Expecting year and month
     found = False
     for flight in data['flights']:
-        if flight['year'] == year and flight['month'] == month:
+        if flight['year'] == year and flight['month'].lower() == month.lower():
             print(flight['passengers'])
             found = True
             break
