@@ -9,18 +9,24 @@ flights_data = '''
     ]
 }
 '''
+
 data = json.loads(flights_data)
 
-flight_dict = {}
-for flight in data['flights']:
-    flight_dict[(flight['year'], flight['month'].lower())] = flight['passengers']
-
+# Đọc số lượng bộ test
 test_cases = int(input())
 
+# Xử lý từng bộ test
 for _ in range(test_cases):
-    year, month = input().split()
-    key = (year, month.lower())
-    if key in flight_dict:
-        print(flight_dict[key])
+    year, month = input().split() 
+    found = False
+    total_passengers = 0
+    
+    for flight in data['flights']:
+        if flight['year'] == year and flight['month'].lower() == month.lower():
+            total_passengers += int(flight['passengers'])
+            found = True
+    
+    if found:
+        print(total_passengers)
     else:
         print("Invalid")
