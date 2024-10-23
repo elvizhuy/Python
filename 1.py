@@ -12,14 +12,12 @@ flights_data = '''
 
 data = json.loads(flights_data)
 
-# Đọc số lượng bộ test
 test_cases = int(input())
 
-# Xử lý từng bộ test
 for _ in range(test_cases):
-    year, month = input().split() 
-    found = False
-    total_passengers = 0
+    year, month = input().split()  
+    found = False  
+    total_passengers = 0  
     
     for flight in data['flights']:
         if flight['year'] == year and flight['month'].lower() == month.lower():

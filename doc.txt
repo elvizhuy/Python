@@ -117,10 +117,6 @@ Dữ liệu về chuyến bay được lưu trữ trong tệp "flights.json" có
 
 - Giá trị của khóa danh sách các từ điển, mỗi phần tử bao gồm các khóa và giá trị text như hình:
 
-hN8dX48qGNXimkVLfBGF+gP8PbAZPgBPPxrIAAAAASUVORK5CYII=
-
- 
-
 Trong đó giá trị của khóa year là năm thống kê, giá trị của khóa month là tháng thống kê, giá trị của khóa passagers là số hành khách chở được tương ứng.
 
 Yêu cầu: Đọc dữ liệu từ file JSON và in ra tổng số hành khách có chuyến bay trong năm x tháng y
