@@ -9,16 +9,12 @@ flights_data = '''
     ]
 }
 '''
-
 data = json.loads(flights_data)
-
 test_cases = int(input())
-
 for _ in range(test_cases):
     year, month = input().split()  
     found = False  
     total_passengers = 0  
-    
     for flight in data['flights']:
         if flight['year'] == year and flight['month'].lower() == month.lower():
             total_passengers += int(flight['passengers'])
